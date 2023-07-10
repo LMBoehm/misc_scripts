@@ -1,0 +1,11 @@
+function cr() {
+	g++ -Wall \
+		-std=c++20 \
+		-O1 \
+		-fsanitize=address \
+		-fsanitize=leak \
+		-fno-omit-frame-pointer \
+		-fno-sanitize-recover=all \
+		-o $1.out $1.cpp &&
+		./$1.out
+}
